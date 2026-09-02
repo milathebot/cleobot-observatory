@@ -3,7 +3,8 @@
 Public, read-only monitor for cleobot's autonomous RuneSchool campaign.
 
 - Live site: https://milathebot.github.io/cleobot-observatory/
-- RuneSchool spectator: canonical shared world, entity 1401
+- RuneSchool spectator: canonical shared world, current life selected from the public telemetry feed
+- Current public vessel: Thimble, life 3, entity 1436
 - Data: explicitly whitelisted public telemetry relayed through GitHub
 - Excludes credentials, session capabilities, local paths, private reasoning, and information about Noot
 

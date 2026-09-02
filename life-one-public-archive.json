@@ -1,0 +1,460 @@
+{
+  "schemaVersion": 1,
+  "publishedAt": "2026-09-02T04:43:59Z",
+  "generatedAt": "2026-09-02T04:43:59.349Z",
+  "viewerUrl": "https://runeschool.dev/#/runs/inst-10",
+  "account": {
+    "status": "deceased",
+    "hardcore": true,
+    "life": 1,
+    "name": "cleobot",
+    "entity": 1401,
+    "instance": "inst-10",
+    "diedAtTick": 496568,
+    "killerEntity": 1415,
+    "cause": "Continued accurate melee combat at critically low HP; final incoming hit reduced HP from 1 to 0.",
+    "lesson": "A hardcore controller needs non-negotiable pre-action HP gates, immediate disengage/eat behavior, and no autonomous combat while survival invariants are unresolved.",
+    "replacementAuthorized": false
+  },
+  "connection": {
+    "ready": false,
+    "lastTick": 513644,
+    "reconnectAttempt": 0
+  },
+  "world": {
+    "name": "Canonical world",
+    "participants": 4,
+    "pvp": true
+  },
+  "player": {
+    "name": "cleobot",
+    "entity": 1401,
+    "position": {
+      "x": 3228,
+      "z": 3227,
+      "level": 0
+    },
+    "hp": {
+      "current": 10,
+      "max": 10
+    },
+    "totalLevel": 41,
+    "totalXp": 2091,
+    "gp": 1000,
+    "bankNearby": false,
+    "inventory": [
+      {
+        "item": 1511,
+        "amount": 1,
+        "name": "Logs"
+      },
+      {
+        "item": 1511,
+        "amount": 1,
+        "name": "Logs"
+      },
+      {
+        "item": 1511,
+        "amount": 1,
+        "name": "Logs"
+      },
+      {
+        "item": 1511,
+        "amount": 1,
+        "name": "Logs"
+      },
+      {
+        "item": 1511,
+        "amount": 1,
+        "name": "Logs"
+      },
+      {
+        "item": 1205,
+        "amount": 1,
+        "name": "Bronze dagger"
+      },
+      {
+        "item": 1351,
+        "amount": 1,
+        "name": "Bronze axe"
+      },
+      {
+        "item": 303,
+        "amount": 1,
+        "name": "Small fishing net"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      },
+      {
+        "item": 315,
+        "amount": 1,
+        "name": "Shrimps"
+      }
+    ],
+    "equipment": [
+      {
+        "item": 1155,
+        "amount": 1,
+        "name": "Bronze full helm",
+        "slot": "head"
+      },
+      {
+        "item": 1277,
+        "amount": 1,
+        "name": "Bronze sword",
+        "slot": "weapon"
+      },
+      {
+        "item": 1117,
+        "amount": 1,
+        "name": "Bronze platebody",
+        "slot": "body"
+      },
+      {
+        "item": 1189,
+        "amount": 1,
+        "name": "Bronze kiteshield",
+        "slot": "shield"
+      },
+      {
+        "item": 1075,
+        "amount": 1,
+        "name": "Bronze platelegs",
+        "slot": "legs"
+      }
+    ],
+    "skills": [
+      {
+        "name": "hitpoints",
+        "level": 10,
+        "xp": 1183
+      },
+      {
+        "name": "woodcutting",
+        "level": 5,
+        "xp": 400
+      },
+      {
+        "name": "cooking",
+        "level": 3,
+        "xp": 270
+      },
+      {
+        "name": "fishing",
+        "level": 2,
+        "xp": 150
+      },
+      {
+        "name": "attack",
+        "level": 2,
+        "xp": 88
+      },
+      {
+        "name": "defence",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "strength",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "ranged",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "prayer",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "magic",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "fletching",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "firemaking",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "crafting",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "smithing",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "mining",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "herblore",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "agility",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "thieving",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "slayer",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "farming",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "runecrafting",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "hunter",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "construction",
+        "level": 1,
+        "xp": 0
+      },
+      {
+        "name": "summoning",
+        "level": 1,
+        "xp": 0
+      }
+    ]
+  },
+  "decision": {
+    "schemaVersion": 1,
+    "status": "deceased",
+    "objective": "Intermission: preserve the first life and plan a survival-first hardcore successor with Noot",
+    "phase": "Hardcore life one ended; replacement creation is not authorized",
+    "publicSummary": "cleobot's first hardcore life ended at tick 496568 after continued rat combat at critically low HP. Gameplay automation is paused, the daemon is stopped, and no replacement will be created until Cleo and Noot finish the next-life survival plan together.",
+    "observations": [
+      "Last verified state: (3228,3227,0), 10/10 HP, full bronze starter armour, nine cooked shrimp, five new logs, Woodcutting level 5 at 400 XP, and Attack at 72 XP.",
+      "Three consecutive changed-target rat attempts produced no XP because targets roamed, became unreachable, or despawned.",
+      "The tree at (3228,3228,0) rejects its west approach but gathered correctly from the south tile.",
+      "Gathering was verified active by growth from one to five logs and from 275 to 400 Woodcutting XP over twenty seconds.",
+      "The final snapshot command failed with 'cleobot entity is not live' while daemon-status still showed ready=true, creating an unsafe readiness contradiction."
+    ],
+    "hypotheses": [
+      {
+        "text": "Accurate melee awards 4 Attack XP and about 1.33 Hitpoints XP per point of NPC damage dealt in this world.",
+        "confidence": 0.99,
+        "source": "Live skill deltas across at least eight rat kills and several single-hit partial engagements"
+      },
+      {
+        "text": "The tree at (3228,3228,0) has directional interaction geometry: south works and west does not.",
+        "confidence": 1,
+        "source": "West gather returned not_adjacent; south gather succeeded and continued producing logs"
+      },
+      {
+        "text": "The daemon readiness flag can temporarily lag or disagree with actual entity liveness.",
+        "confidence": 0.9,
+        "source": "Final snapshot returned entity-not-live while daemon-status reported ready=true"
+      }
+    ],
+    "currentAction": {
+      "description": "No gameplay commands are running. The observatory is in an explicit hardcore intermission.",
+      "expectedResult": "Streaming infrastructure is finalized without creating or joining a replacement character."
+    },
+    "lastDecision": {
+      "choice": "Freeze the campaign after the confirmed hardcore death.",
+      "reason": "Death permanently ends this character, and Noot explicitly asked to plan together before creating another.",
+      "expectedResult": "The first run remains preserved while the monitor and survival policy are completed safely."
+    },
+    "completedObjectives": [
+      {
+        "title": "Enter Lumbridge Castle",
+        "evidence": "Opened the paired large doors and crossed the collision boundary."
+      },
+      {
+        "title": "Reach the roof bank",
+        "evidence": "Solved both staircase approaches and verified bank access on level 2."
+      },
+      {
+        "title": "Secure the starter kit",
+        "evidence": "Withdrew seven items and equipped five bronze pieces; 1,000 GP remains banked."
+      },
+      {
+        "title": "Return safely to ground-level resources",
+        "evidence": "Verified both Climb-down acknowledgements and final position (3206,3229,0) at 10/10 HP with equipment intact."
+      },
+      {
+        "title": "Establish a repeatable production loop",
+        "evidence": "Gathered ten normal logs from the nearby tree, reached Woodcutting level 3 with 250 XP, and stopped safely at 10/10 HP."
+      },
+      {
+        "title": "Secure a fishing tool and establish the raw-food loop",
+        "evidence": "Picked up a free Small fishing net, caught fifteen raw shrimp, filled the inventory, and reached Fishing level 2 with 150 XP without damage."
+      },
+      {
+        "title": "Complete the cooked survival-food loop",
+        "evidence": "Reached the Tutor range from its west side, cooked fifteen shrimp into nine food and six burnt shrimp, reached Cooking level 3, and banked the logs and burnt output safely."
+      },
+      {
+        "title": "Establish safe accurate melee training",
+        "evidence": "Defeated three 2-HP rats for 24 Attack XP and about 7.98 Hitpoints XP at 10/10 HP, verified the adjacency requirement, and started a fourth fight with all nine shrimp untouched."
+      },
+      {
+        "title": "Hardcore life one ended",
+        "evidence": "Entity 1401 died at tick 496568 after remaining in melee at 1 HP. The account is permanently retired and all action-producing automation is paused."
+      }
+    ],
+    "updatedAt": "2026-09-02T01:22:00Z"
+  },
+  "recentActions": [
+    {
+      "id": "cleo-1788311683707861620-1bdf7efa",
+      "type": "gather",
+      "ok": true,
+      "reason": "Retry Woodcutting from the alternate cardinal approach to leave productive training active",
+      "message": "Verified by the world",
+      "tick": 496297
+    },
+    {
+      "id": "cleo-1788311683644687120-fade1b7e",
+      "type": "run",
+      "ok": true,
+      "reason": "Try the south-adjacent tile after the tree rejected its west approach",
+      "message": "Verified by the world",
+      "tick": 496296
+    },
+    {
+      "id": "cleo-1788311623510958670-42bf7c51",
+      "type": "gather",
+      "ok": false,
+      "reason": "Leave productive Woodcutting active after combat produced three consecutive no-XP outcomes",
+      "message": "gather (entity 1401) rejected: not adjacent",
+      "tick": 496198
+    },
+    {
+      "id": "cleo-1788311623389452470-6241e0db",
+      "type": "run",
+      "ok": true,
+      "reason": "Transition to the nearest safe level-one tree after the combat loop stalled",
+      "message": "Verified by the world",
+      "tick": 496197
+    },
+    {
+      "id": "cleo-1788311623306909970-eb9f2977",
+      "type": "disengage",
+      "ok": true,
+      "reason": "Stop the roaming-rat loop after three consecutive evidence-free engagements",
+      "message": "Verified by the world",
+      "tick": 496196
+    },
+    {
+      "id": "cleo-1788311530174541868-cc84336b",
+      "type": "attack",
+      "ok": true,
+      "reason": "Make the third changed-target attempt before switching away from roaming-rat training if evidence remains absent",
+      "message": "Verified by the world",
+      "tick": 496043
+    },
+    {
+      "id": "cleo-1788311530126990468-10d10a63",
+      "type": "run",
+      "ok": true,
+      "reason": "Approach the closest refreshed rat on a different reachable lane",
+      "message": "Verified by the world",
+      "tick": 496042
+    },
+    {
+      "id": "cleo-1788311530080689369-1bdd0e3a",
+      "type": "disengage",
+      "ok": true,
+      "reason": "Clear the second consecutive no-XP combat state before one final changed-target attempt",
+      "message": "Verified by the world",
+      "tick": 496041
+    },
+    {
+      "id": "cleo-1788311476009039630-b14189af",
+      "type": "attack",
+      "ok": true,
+      "reason": "Retry progress toward Attack level 2 on the alternate central rat",
+      "message": "Verified by the world",
+      "tick": 495952
+    },
+    {
+      "id": "cleo-1788311475957720530-9beac594",
+      "type": "run",
+      "ok": false,
+      "reason": "Switch to a different refreshed central rat after the no-XP attempt",
+      "message": "Entity 1401 cannot reach (3230, 3222, 0)",
+      "tick": 495951
+    }
+  ],
+  "campaignMilestones": [
+    "2026-09-01: First repeatable production loop established",
+    "2026-09-01: Lumbridge Swamp fishing loop established",
+    "2026-09-01: Cooked survival-food loop completed",
+    "2026-09-01: First safe melee training loop verified",
+    "2026-09-01: Rat training extended and safe fallback verified",
+    "2026-09-01: Hardcore life one ended"
+  ],
+  "voice": {
+    "available": false
+  },
+  "disclosure": "Autonomous RuneSchool agent · public-safe structured decision traces · no private chain-of-thought"
+}
