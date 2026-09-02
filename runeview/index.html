@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#070b0e" />
+  <title>cleobot native spectator</title>
+  <link rel="stylesheet" href="./assets/runeschool.css" />
+  <style>
+    html, body, #app { width: 100%; height: 100%; margin: 0; overflow: hidden; background: #070b0e; }
+    .recorder-agent-panel, .recorder-chat { display: none !important; }
+    .recorder-screen, .recorder-screen > canvas { width: 100% !important; height: 100% !important; }
+    #cleo-viewer-status {
+      position: fixed; z-index: 20; left: 50%; bottom: 14px; transform: translateX(-50%);
+      padding: 7px 11px; border: 1px solid rgba(199,168,94,.55);
+      background: rgba(7,8,10,.78); color: #e8d9ad;
+      font: 600 10px/1.1 "IBM Plex Mono", monospace; letter-spacing: .12em;
+      text-transform: uppercase; pointer-events: none; opacity: .92;
+    }
+    body[data-ready="true"] #cleo-viewer-status { opacity: .72; }
+    body[data-error="true"] #cleo-viewer-status { color: #ffb5bd; border-color: #a64e59; }
+  </style>
+  <script>
+    (() => {
+      'use strict';
+      const API = 'https://api.runeschool.dev';
+      const hashQuery = new URLSearchParams((location.hash.split('?')[1] || ''));
+      const INSTANCE = hashQuery.get('instance') || 'inst-10';
+      const ENTITY = Number(hashQuery.get('entity') || 1401);
+      const NAME = (hashQuery.get('follow') || 'cleobot').toLowerCase();
+      const nativeFetch = window.fetch.bind(window);
+      const hintedRegionX = Number(hashQuery.get('rx'));
+      const hintedRegionZ = Number(hashQuery.get('rz'));
+      const announce = (status, extra = {}) => parent.postMessage({ type: 'cleo-native-viewer', status, entity: ENTITY, name: NAME, ...extra }, location.origin);
+
+      window.fetch = async (input, init) => {
+        const requestUrl = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+        const url = new URL(requestUrl, location.href);
+        if (url.origin !== API || url.pathname !== `/instances/${INSTANCE}/map`) return nativeFetch(input, init);
+
+        announce('loading-map');
+        const [mapResponse, entitiesResponse] = await Promise.all([
+          nativeFetch(input, init),
+          nativeFetch(`${API}/instances/${INSTANCE}/entities`, { cache: 'no-store' }),
+        ]);
+        if (!mapResponse.ok) return mapResponse;
+        const map = await mapResponse.json();
+        const entitiesPayload = entitiesResponse.ok ? await entitiesResponse.json() : { entities: [] };
+        const subject = (entitiesPayload.entities || []).find((entity) => entity.id === ENTITY && entity.name?.toLowerCase() === NAME);
+        const regionX = Number.isFinite(hintedRegionX) ? hintedRegionX : Math.floor((subject?.at?.x || 0) / 64);
+        const regionZ = Number.isFinite(hintedRegionZ) ? hintedRegionZ : Math.floor((subject?.at?.z || 0) / 64);
+        if (!subject || !Number.isFinite(regionX) || !Number.isFinite(regionZ)) {
+          announce('error', { error: 'configured character could not be verified' });
+          throw new Error(`character ${NAME} / entity ${ENTITY} could not be verified`);
+        }
+
+        const radius = 2;
+        const regions = (map.regions || []).filter((region) =>
+          Math.abs(Math.floor(region.baseX / 64) - regionX) <= radius &&
+          Math.abs(Math.floor(region.baseZ / 64) - regionZ) <= radius
+        );
+        if (!regions.length) {
+          announce('error', { error: 'no nearby map regions' });
+          throw new Error('no map regions around cleobot');
+        }
+        const bounds = {
+          minX: Math.min(...regions.map((region) => region.baseX)),
+          minZ: Math.min(...regions.map((region) => region.baseZ)),
+          maxX: Math.max(...regions.map((region) => region.baseX + 63)),
+          maxZ: Math.max(...regions.map((region) => region.baseZ + 63)),
+        };
+        const body = JSON.stringify({ ...map, regions, bounds });
+        const headers = new Headers(mapResponse.headers);
+        headers.delete('content-length');
+        headers.set('content-type', 'application/json; charset=utf-8');
+        headers.set('cache-control', 'no-store');
+        announce('map-filtered', { regionCount: regions.length, at: subject.at });
+        return new Response(body, { status: mapResponse.status, statusText: mapResponse.statusText, headers });
+      };
+
+      const statusTimer = setInterval(() => {
+        const label = document.getElementById('cleo-viewer-status');
+        if (window.__RECORDER_ERROR__) {
+          document.body.dataset.error = 'true';
+          if (label) label.textContent = `camera error · ${window.__RECORDER_ERROR__}`;
+          announce('error', { error: String(window.__RECORDER_ERROR__) });
+          clearInterval(statusTimer);
+        } else if (window.__RECORDER_READY__) {
+          document.body.dataset.ready = 'true';
+          if (label) label.textContent = `following ${NAME} · entity ${ENTITY}`;
+          announce('ready', { tick: window.__RECORDER_STATE__?.tick || 0 });
+          clearInterval(statusTimer);
+        }
+      }, 500);
+      setTimeout(() => {
+        if (!window.__RECORDER_READY__ && !window.__RECORDER_ERROR__) announce('slow');
+      }, 30000);
+    })();
+  </script>
+</head>
+<body>
+  <div id="app"></div>
+  <div id="cleo-viewer-status">binding camera to cleobot · entity 1401</div>
+  <script type="module" src="./assets/runeschool-recorder.js"></script>
+</body>
+</html>
